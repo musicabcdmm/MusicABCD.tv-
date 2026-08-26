@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusicABCD.tv | Melodies of Hope from Gaza</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
@@ -19,70 +16,56 @@
                 extend: {
                     fontFamily: {
                         sans: ['Tajawal', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            purple: '#8b5cf6',
-                            red: '#ff0000',
-                            paypal: '#0070ba',
-                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col antialiased">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col antialiased">
 
     <!-- Header / Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 dark:bg-slate-950/80 border-b border-slate-800/80 px-4 md:px-8 py-3 transition-colors">
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800/80 px-4 md:px-8 py-3 transition-colors">
         <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
             
-            <!-- Logo & Brand -->
             <div onclick="switchTab('home')" class="flex items-center gap-3 cursor-pointer group">
                 <img src="https://yt3.googleusercontent.com/ytc/AIdro_k3pWpX7P6T4E7H8N0Q2L8M1K6J5H4G3F2E1D0=s176-c-k-c0x00ffffff-no-rj" 
                      alt="MusicABCD Logo" 
                      class="w-10 h-10 rounded-full border-2 border-purple-500/50 group-hover:border-purple-500 transition-all duration-300 object-cover"
-                     onerror="this.src='https://github.com/musicabcdmm/MusicABCD.tv-/blob/main/1.png'">
-                <span class="text-xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                     onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/musicabcdmm/MusicABCD.tv-/main/1.png';">
+                <span class="text-xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                     MusicABCD.tv
                 </span>
             </div>
 
-            <!-- Nav Controls -->
             <div class="flex items-center flex-wrap gap-3 md:gap-4">
-                
-                <!-- Navigation Tabs -->
-                <div class="flex bg-slate-900/80 p-1 rounded-full border border-slate-800">
+                <div class="flex bg-slate-200/80 dark:bg-slate-900/80 p-1 rounded-full border border-slate-300 dark:border-slate-800 transition-colors">
                     <button id="btn-home" onclick="switchTab('home')" class="tab-btn active px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 bg-purple-600 text-white shadow-lg shadow-purple-500/30">
                         <i class="fas fa-home me-1"></i> <span id="navHome">Home</span>
                     </button>
-                    <button id="btn-videos" onclick="switchTab('videos')" class="tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white">
+                    <button id="btn-videos" onclick="switchTab('videos')" class="tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
                         <i class="fab fa-youtube me-1"></i> <span id="navVideos">Videos</span>
                     </button>
                 </div>
 
-                <div class="h-5 w-px bg-slate-800 hidden md:block"></div>
+                <div class="h-5 w-px bg-slate-300 dark:bg-slate-800 hidden md:block"></div>
 
-                <!-- Social Icons -->
-                <div class="flex items-center gap-2 text-slate-400">
-                    <a href="mailto:musicabcdmm@gmail.com" class="p-2 hover:text-red-400 transition-colors" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://t.me/musicabcdmm8" target="_blank" class="p-2 hover:text-sky-400 transition-colors" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                    <a href="mailto:musicabcdmm@gmail.com" class="p-2 hover:text-red-500 transition-colors" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://t.me/musicabcdmm8" target="_blank" class="p-2 hover:text-sky-500 transition-colors" title="Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="https://www.instagram.com/musicabcdtv/" target="_blank" class="p-2 hover:text-pink-500 transition-colors" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.youtube.com/@musicabcdmn" target="_blank" class="p-2 hover:text-red-600 transition-colors" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
 
-                <div class="h-5 w-px bg-slate-800 hidden md:block"></div>
+                <div class="h-5 w-px bg-slate-300 dark:bg-slate-800 hidden md:block"></div>
 
-                <!-- Language Selector -->
-                <select onchange="changeLanguage(this.value)" id="langSelect" class="bg-slate-900 border border-slate-800 text-slate-200 text-xs md:text-sm rounded-full px-3 py-1.5 focus:outline-none focus:border-purple-500 cursor-pointer">
+                <select onchange="changeLanguage(this.value)" id="langSelect" class="bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs md:text-sm rounded-full px-3 py-1.5 focus:outline-none focus:border-purple-500 cursor-pointer transition-colors">
                     <option value="en" selected>English 🇬🇧</option>
                     <option value="ar">العربية 🇸🇦</option>
                 </select>
 
-                <!-- Theme Toggle -->
-                <button onclick="toggleTheme()" id="themeBtn" class="w-9 h-9 flex items-center justify-center bg-slate-900 border border-slate-800 rounded-full text-slate-300 hover:text-white hover:border-slate-700 transition-colors">
-                    <i class="fas fa-sun"></i>
+                <button onclick="toggleTheme()" id="themeBtn" class="w-9 h-9 flex items-center justify-center bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-full text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+                    <i class="fas fa-sun text-yellow-500"></i>
                 </button>
             </div>
         </div>
@@ -93,13 +76,10 @@
         
         <!-- Tab 1: Home Page -->
         <div id="tab-home" class="page-tab block">
-            
-            <!-- Hero Section -->
             <section class="relative px-4 pt-16 pb-12 md:pt-24 md:pb-20 text-center max-w-4xl mx-auto">
-                <!-- Background Glowing Blur Effects -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl -z-10"></div>
                 
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs md:text-sm font-medium mb-6 backdrop-blur-sm" id="badgeText">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-300 text-xs md:text-sm font-medium mb-6 backdrop-blur-sm" id="badgeText">
                     <i class="fas fa-dove"></i> Music is Stronger Than War
                 </div>
                 
@@ -107,8 +87,8 @@
                     Playing Hope from Gaza to the World
                 </h1>
                 
-                <p class="text-slate-400 text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" id="heroDesc">
-                    I am <strong class="text-slate-200">Mohammed</strong>, a music creator. I share my melodies as a message of love and hope defying all odds.
+                <p class="text-slate-600 dark:text-slate-400 text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" id="heroDesc">
+                    I am <strong class="text-slate-900 dark:text-slate-200">Mohammed</strong>, a music creator. I share my melodies as a message of love and hope defying all odds.
                 </p>
                 
                 <div class="flex flex-wrap items-center justify-center gap-4">
@@ -118,29 +98,28 @@
                     <a href="https://www.paypal.com/ncp/payment/X9XNGZZTJBYLJ" target="_blank" id="paypalBtn" class="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-blue-600/30">
                         <i class="fab fa-paypal text-lg"></i> Support Channel
                     </a>
-                    <button onclick="copyLink()" id="shareBtn" class="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold transition-all">
+                    <button onclick="copyLink()" id="shareBtn" class="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-200 dark:bg-slate-900 hover:bg-slate-300 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-semibold transition-all">
                         <i class="fas fa-share-alt"></i> Share Link
                     </button>
                 </div>
             </section>
 
-            <!-- Highlights Grid -->
             <section class="max-w-5xl mx-auto px-4 py-12">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm hover:border-slate-700 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mb-4">
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm transition-colors shadow-sm dark:shadow-none">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xl mb-4">
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" id="card1Title">A Message of Hope</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed" id="card1Desc">Melodies that touch the soul, expressing resilience and life.</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" id="card1Desc">Melodies that touch the soul, expressing resilience and life.</p>
                     </div>
 
-                    <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm hover:border-slate-700 transition-colors">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mb-4">
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm transition-colors shadow-sm dark:shadow-none">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xl mb-4">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2" id="card2Title">Audience Support</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed" id="card2Desc">Your support, subscription, and shares are the biggest drive for this channel.</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" id="card2Desc">Your support, subscription, and shares are the biggest drive for this channel.</p>
                     </div>
                 </div>
             </section>
@@ -149,16 +128,13 @@
         <!-- Tab 2: Videos Library -->
         <div id="tab-videos" class="page-tab hidden">
             <section class="max-w-7xl mx-auto px-4 py-12">
-                
                 <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-10 flex items-center justify-center gap-3" id="videoTitle">
                     <i class="fab fa-youtube text-red-600"></i> Channel Published Videos Library
                 </h2>
 
-                <!-- Videos Grid -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- Video Card 1 -->
-                    <a href="https://www.youtube.com/watch?v=ZwkM5xkJ5xo" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=ZwkM5xkJ5xo" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/ZwkM5xkJ5xo/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -166,12 +142,11 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">MONTAGEM ALQUIMIA SLOWED ( REMIX - MABCD.tv )</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">MONTAGEM ALQUIMIA SLOWED ( REMIX - MABCD.tv )</h3>
                         </div>
                     </a>
 
-                    <!-- Video Card 2 -->
-                    <a href="https://www.youtube.com/watch?v=JXIpOCdv6AQ" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=JXIpOCdv6AQ" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/JXIpOCdv6AQ/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -179,12 +154,11 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">LET ME DRIVE FUNK ( REMIX - MABCD.tv )</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">LET ME DRIVE FUNK ( REMIX - MABCD.tv )</h3>
                         </div>
                     </a>
 
-                    <!-- Video Card 3 -->
-                    <a href="https://www.youtube.com/watch?v=riBvA_ud8RU" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=riBvA_ud8RU" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/riBvA_ud8RU/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -192,12 +166,11 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">MONTAGEM LADRAO ( REMIX - MABCD.tv )</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">MONTAGEM LADRAO ( REMIX - MABCD.tv )</h3>
                         </div>
                     </a>
 
-                    <!-- Video Card 4 -->
-                    <a href="https://www.youtube.com/watch?v=L10YA8LQuk0" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=L10YA8LQuk0" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/L10YA8LQuk0/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -205,12 +178,11 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">Martinwhite - FASHONISTA (MABCD.tv - ReMIX)</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Martinwhite - FASHONISTA (MABCD.tv - ReMIX)</h3>
                         </div>
                     </a>
 
-                    <!-- Video Card 5 -->
-                    <a href="https://www.youtube.com/watch?v=tB3a0IXfMMk" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=tB3a0IXfMMk" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/tB3a0IXfMMk/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -218,12 +190,11 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">STANDLY X YERI MUA - CHAPARRITA (MABCD.tv - ReMIX)</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">STANDLY X YERI MUA - CHAPARRITA (MABCD.tv - ReMIX)</h3>
                         </div>
                     </a>
 
-                    <!-- Video Card 6 -->
-                    <a href="https://www.youtube.com/watch?v=gdh_OvJXAOw" target="_blank" class="group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                    <a href="https://www.youtube.com/watch?v=gdh_OvJXAOw" target="_blank" class="group bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none">
                         <div class="relative aspect-video bg-slate-950 overflow-hidden">
                             <img src="https://img.youtube.com/vi/gdh_OvJXAOw/hqdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -231,19 +202,18 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="font-bold text-sm text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-400 transition-colors">Savage - Donny Duardo (Official Musicabcdmm)</h3>
+                            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Savage - Donny Duardo (Official Musicabcdmm)</h3>
                         </div>
                     </a>
 
                 </div>
 
-                <!-- Subscribe Card Bottom -->
-                <div class="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="mt-12 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm dark:shadow-none transition-colors">
                     <div class="flex items-center gap-4 text-center md:text-left">
-                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_k3pWpX7P6T4E7H8N0Q2L8M1K6J5H4G3F2E1D0=s176-c-k-c0x00ffffff-no-rj" alt="MusicABCD" class="w-16 h-16 rounded-full border-2 border-red-600 p-0.5 object-cover" onerror="this.src='https://via.placeholder.com/100?text=ABCD'">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_k3pWpX7P6T4E7H8N0Q2L8M1K6J5H4G3F2E1D0=s176-c-k-c0x00ffffff-no-rj" alt="MusicABCD" class="w-16 h-16 rounded-full border-2 border-red-600 p-0.5 object-cover" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/musicabcdmm/MusicABCD.tv-/main/1.png';">
                         <div>
                             <h3 class="text-lg font-bold">MusicABCD.tv</h3>
-                            <p class="text-slate-400 text-sm" id="channelSubText">Follow the channel for new music and melodies from Gaza</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm" id="channelSubText">Follow the channel for new music and melodies from Gaza</p>
                         </div>
                     </div>
                     <a href="https://www.youtube.com/@musicabcdmn?sub_confirmation=1" target="_blank" class="px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold transition-all shadow-lg shadow-red-600/30 flex items-center gap-2">
@@ -256,28 +226,24 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-auto border-t border-slate-800/80 py-8 text-center text-slate-400 text-xs md:text-sm">
+    <footer class="mt-auto border-t border-slate-200 dark:border-slate-800/80 py-8 text-center text-slate-500 dark:text-slate-400 text-xs md:text-sm transition-colors">
         <p>© 2026 MusicABCD.tv — <span id="footerText">All rights reserved</span></p>
     </footer>
 
-    <!-- Logic Script -->
     <script>
         function switchTab(tabName) {
             document.querySelectorAll('.page-tab').forEach(tab => tab.classList.add('hidden'));
-            
-            const selectedTab = document.getElementById('tab-' + tabName);
-            selectedTab.classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
 
             const btnHome = document.getElementById('btn-home');
             const btnVideos = document.getElementById('btn-videos');
 
             if (tabName === 'home') {
                 btnHome.className = "tab-btn active px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 bg-purple-600 text-white shadow-lg shadow-purple-500/30";
-                btnVideos.className = "tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white";
+                btnVideos.className = "tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
             } else {
                 btnVideos.className = "tab-btn active px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 bg-purple-600 text-white shadow-lg shadow-purple-500/30";
-                btnHome.className = "tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white";
+                btnHome.className = "tab-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -290,7 +256,7 @@
                 navVideos: "Videos",
                 badgeText: '<i class="fas fa-dove"></i> Music is Stronger Than War',
                 heroTitle: 'Playing Hope from Gaza to the World',
-                heroDesc: 'I am <strong class="text-slate-200">Mohammed</strong>, a music creator. I share my melodies as a message of love and hope defying all odds.',
+                heroDesc: 'I am <strong class="text-slate-900 dark:text-slate-200">Mohammed</strong>, a music creator. I share my melodies as a message of love and hope defying all odds.',
                 watchBtn: '<i class="fab fa-youtube text-lg"></i> Watch Videos',
                 paypalBtn: '<i class="fab fa-paypal text-lg"></i> Support Channel',
                 shareBtn: '<i class="fas fa-share-alt"></i> Share Link',
@@ -310,7 +276,7 @@
                 navVideos: "الفيديوهات",
                 badgeText: '<i class="fas fa-dove"></i> الموسيقى أقوى من الحرب',
                 heroTitle: 'نعزف الأمل من غزة ونشارك العالم ألحاننا',
-                heroDesc: 'أنا <strong class="text-slate-200">محمد</strong>، صانع محتوى موسيقي. أشارككم ألحاني لتكون رسالة حب وأمل تتحدى كل الظروف.',
+                heroDesc: 'أنا <strong class="text-slate-900 dark:text-slate-200">محمد</strong>، صانع محتوى موسيقي. أشارككم ألحاني لتكون رسالة حب وأمل تتحدى كل الظروف.',
                 watchBtn: '<i class="fab fa-youtube text-lg"></i> مشاهدة الفيديوهات',
                 paypalBtn: '<i class="fab fa-paypal text-lg"></i> دعم القناة',
                 shareBtn: '<i class="fas fa-share-alt"></i> مشاركة الرابط',
@@ -356,12 +322,13 @@
         function toggleTheme() {
             const html = document.documentElement;
             const themeBtn = document.getElementById('themeBtn');
+            
             if (html.classList.contains('dark')) {
                 html.classList.remove('dark');
-                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                themeBtn.innerHTML = '<i class="fas fa-moon text-slate-700"></i>';
             } else {
                 html.classList.add('dark');
-                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                themeBtn.innerHTML = '<i class="fas fa-sun text-yellow-500"></i>';
             }
         }
 
